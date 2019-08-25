@@ -1,5 +1,9 @@
 <div>
   <h1 style="text-align: center">{{header}}</h1>
   <h2 style="text-align: center">{{titre}}</h2>
-  <p>{{ contacts[0].first_name }}</p>
+  <ul>
+    <li *ngFor="let contact of contacts">
+      <span>{{contact.first_name}} {{contact.last_name}}</span>
+    </li>
+  </ul>
 </div>
