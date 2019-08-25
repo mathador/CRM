@@ -1,6 +1,18 @@
 <div>
   <h1 style="text-align: center">{{header}}</h1>
-  <h2 style="text-align: center">{{titre}}</h2>
+
+  <div *ngIf="titre; then unTitre; else pasTitre">
+    <h1>ne parait jamais, même pas dans le code</h1>
+  </div>
+
+  <ng-template #unTitre>
+    <h2 style="text-align: center">{{titre}}</h2>
+  </ng-template>
+
+  <ng-template #pasTitre>
+    <h2 style="text-align: center">oh oh la variable titre n'existe pas</h2>
+  </ng-template>
+
   <ul>
     <li *ngFor="let contact of contacts">
       <span>{{contact.first_name}} {{contact.last_name}}</span>
