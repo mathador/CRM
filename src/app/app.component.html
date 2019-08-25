@@ -18,9 +18,12 @@
       <span>{{contact.first_name}} {{contact.last_name}}</span>
     </li>
   </ul>
-  
+
+  <!-- <input type="text" #lettres value="Manny Henri" (keyup)="0">
+  <h3 [class.parfait]="nombreLettres('parfait')">{{ lettres.value.length }}</h3> -->
+
   <input type="text" #lettres value="Manny Henri" (keyup)="0">
-  <h3>{{ lettres.value.length }}</h3>
+  <h3 [ngClass]="lettres.value.length > 15 ? 'trop' : 'parfait'">{{ lettres.value.length }}</h3>
 
   <!-- <ul [ngSwitch]="person">
     <li *ngSwitchCase="'Tatum'">Coucou</li>
