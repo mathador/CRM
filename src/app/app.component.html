@@ -18,4 +18,9 @@
       <span>{{contact.first_name}} {{contact.last_name}}</span>
     </li>
   </ul>
+  
+  <ul [ngSwitch]="person">
+    <li *ngSwitchCase="'Tatum'">Coucou</li>
+    <li *ngSwitchCase="'Anet'">Bises</li>
+  </ul>
 </div>

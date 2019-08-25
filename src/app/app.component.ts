@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   header = 'CRM';
-  //titre = 'Gestion des relations clients';
+  titre = 'Gestion des relations clients';
+  person = 'Tatum';
   contacts =[{"first_name":"Tatum","last_name":"Vernon","email":"tvernon2@lycos.com","gender":"Female","company":"Youopia"},
   {"first_name":"Anet","last_name":"Bellis","email":"abellis1@cnn.com","gender":"Female","company":"Oloo"},
   {"first_name":"Pippa","last_name":"Goymer","email":"pgoymer2@ihg.com","gender":"Female","company":"Browsecat"},
