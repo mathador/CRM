@@ -19,8 +19,11 @@
     </li>
   </ul>
   
-  <ul [ngSwitch]="person">
+  <input type="text" #lettres value="Manny Henri" (keyup)="0">
+  <h3>{{ lettres.value.length }}</h3>
+
+  <!-- <ul [ngSwitch]="person">
     <li *ngSwitchCase="'Tatum'">Coucou</li>
     <li *ngSwitchCase="'Anet'">Bises</li>
-  </ul>
+  </ul> -->
 </div>
