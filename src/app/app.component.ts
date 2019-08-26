@@ -15,6 +15,8 @@ export class AppComponent {
   header = 'CRM';
   titre = 'Gestion des relations clients';
   person = 'Tatum';
+  colorbackground = 'gray';
+  textAlign = 'center';
 
   showSpinner = false;
 
@@ -23,5 +25,12 @@ export class AppComponent {
     setTimeout(() => {
       this.showSpinner = false;
     }, 5000)
+  }
+
+  changeAlign() {
+    if (this.textAlign === 'center')
+      this.textAlign = 'left';
+    else
+      this.textAlign = 'center';
   }
 }

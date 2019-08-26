@@ -1,16 +1,16 @@
-<div>
-  <h1 style="text-align: center">{{header}}</h1>
+<div [style.background-color]="colorbackground">
+  <h1 [style.text-align]="textAlign">{{header}}</h1>
 
   <div *ngIf="titre; then unTitre; else pasTitre">
     <h1>ne parait jamais, même pas dans le code</h1>
   </div>
 
   <ng-template #unTitre>
-    <h2 style="text-align: center">{{titre}}</h2>
+    <h2 [style.text-align]="textAlign">{{titre}}</h2>
   </ng-template>
 
   <ng-template #pasTitre>
-    <h2 style="text-align: center">oh oh la variable titre n'existe pas</h2>
+    <h2 [style.text-align]="textAlign">oh oh la variable titre n'existe pas</h2>
   </ng-template>
 
   <ul>
@@ -31,7 +31,7 @@
     <li *ngSwitchCase="'Anet'">Bises</li>
   </ul> -->
 
-  <button>Hello World ! 1</button>
+  <button (click)="changeAlign()">Change align</button>
   <button mat-button>Hello World ! 2</button>
   <button mat-raised-button>Hello World ! 3</button>
 
