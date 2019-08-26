@@ -17,6 +17,7 @@ export class AppComponent {
   person = 'Tatum';
   colorbackground = 'gray';
   textAlign = 'center';
+  buttonState = true;
 
   showSpinner = false;
 
@@ -32,5 +33,9 @@ export class AppComponent {
       this.textAlign = 'left';
     else
       this.textAlign = 'center';
+  }
+
+  animateHeader() {
+    this.buttonState = !this.buttonState;
   }
 }

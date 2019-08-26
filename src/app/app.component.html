@@ -1,5 +1,5 @@
 <div [style.background-color]="colorbackground">
-  <h1 [style.text-align]="textAlign">{{header}}</h1>
+  <h1 [style.text-align]="textAlign" *ngIf="buttonState">{{header}}</h1>
 
   <div *ngIf="titre; then unTitre; else pasTitre">
     <h1>ne parait jamais, même pas dans le code</h1>
@@ -32,7 +32,7 @@
   </ul> -->
 
   <button (click)="changeAlign()">Change align</button>
-  <button mat-button>Hello World ! 2</button>
+  <button (click)="animateHeader()" mat-button>Animate !</button>
   <button mat-raised-button>Hello World ! 3</button>
 
   <mat-button-toggle #togBut checked disableRipple>Toggle btn</mat-button-toggle>
