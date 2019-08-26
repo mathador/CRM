@@ -34,4 +34,10 @@
   <button>Hello World ! 1</button>
   <button mat-button>Hello World ! 2</button>
   <button mat-raised-button>Hello World ! 3</button>
+
+  <mat-button-toggle #togBut checked disableRipple>Toggle btn</mat-button-toggle>
+  <p>{{togBut.checked}}</p>
+
+  <mat-spinner *ngIf="showSpinner"></mat-spinner>
+  <button (click)="loadData()">Load Data</button>
 </div>

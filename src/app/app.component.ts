@@ -15,4 +15,13 @@ export class AppComponent {
   header = 'CRM';
   titre = 'Gestion des relations clients';
   person = 'Tatum';
+
+  showSpinner = false;
+
+  loadData() {
+    this.showSpinner = true;
+    setTimeout(() => {
+      this.showSpinner = false;
+    }, 5000)
+  }
 }
