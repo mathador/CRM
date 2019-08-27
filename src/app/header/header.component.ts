@@ -28,8 +28,8 @@ export class HeaderComponent implements OnInit {
     
   titre = 'Gestion des relations clients';
   header = 'CRM';
-  textAlign = 'center';
   headerState = 'inactive';
+  textAlign = 'center';
   
   changeAlign() {
     if (this.textAlign === 'center')
