@@ -1,3 +1,12 @@
+<mat-toolbar color="primary" class="navbar">
+  <div>toolbar</div>
+  <div>
+      <span>Home</span>
+      <span>About</span>
+      <span>Services</span>
+  </div>
+</mat-toolbar>
+
 <div [style.background-color]="colorbackground">
   <h1 [style.text-align]="textAlign" *ngIf="buttonState">{{header}}</h1>
 
@@ -41,4 +50,5 @@
 
   <mat-spinner *ngIf="showSpinner"></mat-spinner>
   <button (click)="loadData()">Load Data</button>
+
 </div>

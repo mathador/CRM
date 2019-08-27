@@ -6,3 +6,10 @@ h1 {
   -webkit-text-stroke-color: black;
 }
 
+.navbar {
+  justify-content: space-between;
+}
+
+.navbar span {
+  padding-right: 1rem;
+}
