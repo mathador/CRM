@@ -24,16 +24,12 @@ export class AppComponent {
       return true;
   }
 
-  header = 'CRM';
-  titre = 'Gestion des relations clients';
   person = 'Tatum';
   colorbackground = 'gray';
-  textAlign = 'center';
   buttonState = true;
-
+  
   showSpinner = false;
-  headerState = 'inactive';
-
+  
   loadData() {
     this.showSpinner = true;
     setTimeout(() => {
@@ -41,15 +37,4 @@ export class AppComponent {
     }, 5000)
   }
 
-  changeAlign() {
-    if (this.textAlign === 'center')
-      this.textAlign = 'left';
-    else
-      this.textAlign = 'center';
-  }
-
-  animateHeader() {
-    //this.buttonState = !this.buttonState;
-    this.headerState = (this.headerState === 'inactive' ? 'active' : 'inactive')
-  }
 }

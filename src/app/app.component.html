@@ -1,18 +1,6 @@
 <div [style.background-color]="colorbackground">
-  <h1 [style.text-align]="textAlign" [@headerAnimation]="headerState" >{{header}}</h1>
 
-  <div *ngIf="titre; then unTitre; else pasTitre">
-    <h1>ne parait jamais, même pas dans le code</h1>
-  </div>
-
-  <button (click)="animateHeader()" mat-button>Animate !</button>
-  <ng-template #unTitre>
-    <h2 [style.text-align]="textAlign">{{titre}}</h2>
-  </ng-template>
-
-  <ng-template #pasTitre>
-    <h2 [style.text-align]="textAlign">oh oh la variable titre n'existe pas</h2>
-  </ng-template>
+  <app-header></app-header>
 
   <ul>
     <li *ngFor="let contact of contacts">
