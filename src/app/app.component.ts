@@ -1,9 +1,21 @@
 import { Component } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations:[
+    trigger('headerAnimation', [
+      state('inactive', style({
+        transform: 'scale(1)'
+      })),
+      state('active', style({
+        transform: 'scale(1.5)'
+      }))
+      
+    ])
+  ]
 })
 export class AppComponent {
 
@@ -20,6 +32,7 @@ export class AppComponent {
   buttonState = true;
 
   showSpinner = false;
+  headerState = 'inactive';
 
   loadData() {
     this.showSpinner = true;
@@ -36,6 +49,7 @@ export class AppComponent {
   }
 
   animateHeader() {
-    this.buttonState = !this.buttonState;
+    //this.buttonState = !this.buttonState;
+    this.headerState = (this.headerState === 'inactive' ? 'active' : 'inactive')
   }
 }

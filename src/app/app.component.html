@@ -1,10 +1,11 @@
 <div [style.background-color]="colorbackground">
-  <h1 [style.text-align]="textAlign" *ngIf="buttonState">{{header}}</h1>
+  <h1 [style.text-align]="textAlign" [@headerAnimation]="headerState" >{{header}}</h1>
 
   <div *ngIf="titre; then unTitre; else pasTitre">
     <h1>ne parait jamais, même pas dans le code</h1>
   </div>
 
+  <button (click)="animateHeader()" mat-button>Animate !</button>
   <ng-template #unTitre>
     <h2 [style.text-align]="textAlign">{{titre}}</h2>
   </ng-template>
@@ -32,7 +33,7 @@
   </ul> -->
 
   <button (click)="changeAlign()">Change align</button>
-  <button (click)="animateHeader()" mat-button>Animate !</button>
+
   <!-- <button class="vawes-effect waves-light btn" (click)="animateHeader()" mat-button>Animate 2 !</button>
   <button mat-raised-button>Hello World ! 3</button> -->
 
