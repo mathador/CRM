@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
-  styleUrls: ['./contacts.component.css']
+  styleUrls: ['./contacts.component.css'],
+  animations: [
+
+  ]
 })
 export class ContactsComponent implements OnInit {
 
