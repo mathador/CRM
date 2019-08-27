@@ -6,7 +6,16 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.css'],
   animations: [
-
+    trigger('contactsAnimation', [
+      state('active', style({
+        opacity: '1'
+      })),
+      transition('void => *', [
+        style({ transform: 'translateY(-100px)', opacity: 0 }),
+        animate('1000ms ease-in-out')
+      ]
+      ),
+    ])
   ]
 })
 export class ContactsComponent implements OnInit {
