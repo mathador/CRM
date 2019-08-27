@@ -12,8 +12,8 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       })),
       state('active', style({
         transform: 'scale(1.5)'
-      }))
-      
+      })),
+      transition('active <=> inactive', animate('500ms 100ms ease-in-out')),
     ])
   ]
 })
