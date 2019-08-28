@@ -8,6 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
+import { ContactService } from './services/contact.service';
+import { ContactsService } from './services/contacts.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,10 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    ContactsService,
+    ContactService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { ContactsService } from '../services/contacts.service';
 import { Contact } from '../models/Contact';
+import { ContactService } from '../services/contact.service';
 
 @Component({
   selector: 'app-contacts',
@@ -18,13 +19,11 @@ import { Contact } from '../models/Contact';
       ]
       ),
     ])
-  ],
-  // providers: [
-  //   ContactsService
-  // ]
+  ]
 })
 export class ContactsComponent implements OnInit {
-  private ctctService: ContactsService;
+  private ctctsService: ContactsService;
+  private ctctService: ContactService;
   private contacts: Contact[];
 
   first_name = '';
@@ -33,9 +32,10 @@ export class ContactsComponent implements OnInit {
   gender = '';
   company = '';
 
-  constructor(private contactsService: ContactsService) {
-    this.ctctService = contactsService;
-    this.contacts = this.ctctService.getAllContacts();
+  constructor(private contactsService: ContactsService, private contctService: ContactService) {
+    this.ctctsService = contactsService;
+    this.ctctService = contctService;
+    this.contacts = this.ctctsService.getAllContacts();
   }
 
   ngOnInit() {
@@ -44,7 +44,7 @@ export class ContactsComponent implements OnInit {
 
   addContact() {
     //console.warn(this);
-    this.ctctService.addContact(this);
+    this.contacts = this.ctctService.addContact(this);
     //console.warn(this);
     this.clearContact();
   }
