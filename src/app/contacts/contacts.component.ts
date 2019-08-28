@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { ContactsService } from '../services/contacts.service';
+import { Contact } from '../models/Contact';
 
 @Component({
   selector: 'app-contacts',
@@ -16,19 +18,14 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       ]
       ),
     ])
-  ]
+  ],
+  // providers: [
+  //   ContactsService
+  // ]
 })
 export class ContactsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-  contacts = [{ "first_name": "Tatum", "last_name": "Vernon", "email": "tvernon2@lycos.com", "gender": "Female", "company": "Youopia" },
-  { "first_name": "Anet", "last_name": "Bellis", "email": "abellis1@cnn.com", "gender": "Female", "company": "Oloo" },
-  { "first_name": "Pippa", "last_name": "Goymer", "email": "pgoymer2@ihg.com", "gender": "Female", "company": "Browsecat" },
-  { "first_name": "Addison", "last_name": "Lawther", "email": "alawther3@walmart.com", "gender": "Male", "company": "Yoveo" },
-  { "first_name": "Anya", "last_name": "Franzman", "email": "afranzman4@bravesites.com", "gender": "Female", "company": "Twitterbeat" }];
+  private ctctService: ContactsService;
+  private contacts: Contact[];
 
   first_name = '';
   last_name = '';
@@ -36,17 +33,25 @@ export class ContactsComponent implements OnInit {
   gender = '';
   company = '';
 
+  constructor(private contactsService: ContactsService) {
+    this.ctctService = contactsService;
+    this.contacts = this.ctctService.getAllContacts();
+  }
+
+  ngOnInit() {
+  }
+
+
   addContact() {
     //console.warn(this);
-    this.contacts.unshift({
-      first_name: this.first_name,
-      last_name: this.last_name,
-      email: this.email,
-      gender: this.gender,
-      company: this.company
-    }
-    );
+    this.ctctService.addContact(this);
     //console.warn(this);
+    this.clearContact();
+  }
+
+  private clearContact() {
+
+    // pour avoir un formulaire propre
     this.first_name = '';
     this.last_name = '';
     this.email = '';
