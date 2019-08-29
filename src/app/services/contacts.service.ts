@@ -19,4 +19,15 @@ export class ContactsService {
     return this.contacts;
   }
 
+  addContact(contact: Contact) {
+    //console.warn(this);
+    this.contacts.unshift({
+      first_name: contact.first_name,
+      last_name: contact.last_name,
+      email: contact.email,
+      gender: contact.gender,
+      company: contact.company
+    }
+    );
+  }
 }
