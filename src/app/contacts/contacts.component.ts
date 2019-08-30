@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { ContactsService } from '../services/contacts.service';
 import { Contact } from '../models/Contact';
-import { ContactService } from '../services/contact.service';
 
 @Component({
   selector: 'app-contacts',
@@ -23,40 +22,15 @@ import { ContactService } from '../services/contact.service';
 })
 export class ContactsComponent implements OnInit {
   private ctctsService: ContactsService;
-  private ctctService: ContactService;
   private contacts: Contact[];
 
-  first_name = '';
-  last_name = '';
-  email = '';
-  gender = '';
-  company = '';
 
-  constructor(private contactsService: ContactsService, private contctService: ContactService) {
+  constructor(private contactsService: ContactsService) {
     this.ctctsService = contactsService;
-    this.ctctService = contctService;
     this.contacts = this.ctctsService.getAllContacts();
   }
 
   ngOnInit() {
   }
 
-
-  addContact() {
-    //console.warn(this);
-    this.contacts = this.ctctService.addContact(this);
-    //console.warn(this);
-    this.clearContact();
-  }
-
-  private clearContact() {
-
-    // pour avoir un formulaire propre
-    this.first_name = '';
-    this.last_name = '';
-    this.email = '';
-    this.gender = '';
-    this.company = '';
-    //console.warn(this);
-  }
 }

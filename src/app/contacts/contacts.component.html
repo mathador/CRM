@@ -1,28 +1,3 @@
-<div class="row">
-    <form class="col s12" #form="ngForm" (ngSubmit)="addContact()">
-        <div class="row">
-            <div class="input-field col s4">
-                <input placeholder="Prenom" name="first_name" type="text" [(ngModel)]="first_name">
-            </div>
-            <div class="input-field col s4">
-                <input placeholder="Nom" name="last_name" type="text" [(ngModel)]="last_name">
-            </div>
-            <div class="input-field col s4">
-                <input placeholder="Genre" name="gender" type="text" [(ngModel)]="gender">
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s4">
-                <input placeholder="Courriel" name="email" type="text" [(ngModel)]="email">
-            </div>
-            <div class="input-field col s4">
-                <input placeholder="Entreprise" name="company" type="text" [(ngModel)]="company">
-            </div>
-            <button class="vawes-effect waves-light btn" id="btn" type="submit">Ajouter contact</button>
-        </div>
-    </form>
-</div>
-
 <!-- <input type="text" #lettres value="Manny Henri" (keyup)="0">
 <h3 [ngClass]="lettres.value.length > 15 ? 'trop' : 'parfait'">{{ lettres.value.length }}</h3> -->
 

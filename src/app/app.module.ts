@@ -10,12 +10,14 @@ import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
 import { ContactService } from './services/contact.service';
 import { ContactsService } from './services/contacts.service';
+import { FormulaireComponent } from './formulaire/formulaire.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactsComponent,
-    HeaderComponent
+    HeaderComponent,
+    FormulaireComponent
   ],
   imports: [
     BrowserModule,
