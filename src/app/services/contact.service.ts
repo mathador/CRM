@@ -10,7 +10,10 @@ export class ContactService {
 
   constructor(ctctsService: ContactsService) {
     this.ctctsService = ctctsService;
-    this.contacts = ctctsService.getAllContacts();
+    ctctsService.getAllContacts().subscribe(resp => {
+      this.contacts = resp;
+    });
+    //console.log('appel depuis ContactsService');
   }
 
   addContact(contact: Contact): Contact[] {

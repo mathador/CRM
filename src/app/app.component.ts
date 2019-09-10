@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { ContactsService } from './services/contacts.service';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,13 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 export class AppComponent {
+  contacts: any;
+
+  // constructor(contactsColl: ContactsService){
+  //   contactsColl.getAllContacts().subscribe(col=>{
+  //     this.contacts = col;
+  //   })
+  // }
 
   nombreLettres(CSSClass) {
     if (CSSClass === 'parfait')

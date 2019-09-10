@@ -1,11 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Contact } from '../models/Contact';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+//import 'rxjs/add/operator/map';
 
 export class ContactsService {
 
   private contacts: Contact[];
+  private httpC: HttpClient;
 
-  constructor() {
+  constructor(private httpCl: HttpClient) {
+    this.httpC = httpCl;
+
+    // this.httpC.get('/contacts').subscribe(resp =>{
+    //   console.log('resp');
+    //   console.log(resp);
+
+    // });
 
     this.contacts = [
       { "first_name": "Tatum", "last_name": "Vernon", "email": "tvernon2@lycos.com", "gender": "Female", "company": "Youopia" },
@@ -15,11 +27,11 @@ export class ContactsService {
       { "first_name": "Anya", "last_name": "Franzman", "email": "afranzman4@bravesites.com", "gender": "Female", "company": "Twitterbeat" }];
   }
 
-  getAllContacts(): Contact[] {
-    return this.contacts;
+  getAllContacts(): Observable<any> {
+    return this.httpC.get('/contacts');
   }
 
-  addContact(contact: Contact) {
+  addContact(contact) {
     //console.warn(this);
     this.contacts.unshift({
       first_name: contact.first_name,

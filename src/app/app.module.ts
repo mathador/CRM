@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { ContactService } from './services/contact.service';
 import { ContactsService } from './services/contacts.service';
 import { FormulaireComponent } from './formulaire/formulaire.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormulaireComponent } from './formulaire/formulaire.component';
     BrowserAnimationsModule,
     MaterialModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     ContactsService,
